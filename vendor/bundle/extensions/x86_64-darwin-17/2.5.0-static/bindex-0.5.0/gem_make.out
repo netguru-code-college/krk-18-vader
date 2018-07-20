@@ -1,0 +1,15 @@
+current directory: /Users/marcinszmigiel/Projects/krk-18-vader/vendor/bundle/gems/bindex-0.5.0/ext/bindex
+/Users/marcinszmigiel/.rbenv/versions/2.5.1/bin/ruby -r ./siteconf20180720-96975-yydc3d.rb extconf.rb
+creating Makefile
+
+current directory: /Users/marcinszmigiel/Projects/krk-18-vader/vendor/bundle/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR=" clean
+
+current directory: /Users/marcinszmigiel/Projects/krk-18-vader/vendor/bundle/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR="
+compiling cruby.c
+linking shared-object bindex/cruby.bundle
+
+current directory: /Users/marcinszmigiel/Projects/krk-18-vader/vendor/bundle/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cruby.bundle ./.gem.20180720-96975-i4bx6z/bindex
