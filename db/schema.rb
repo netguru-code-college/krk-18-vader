@@ -18,6 +18,10 @@ ActiveRecord::Schema.define(version: 2018_07_21_101806) do
   create_table "colonies", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
+    t.float "lat"
+    t.float "lng"
+    t.text "description"
   end
 
   create_table "items", force: :cascade do |t|
