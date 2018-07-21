@@ -1,0 +1,15 @@
+<nav class="navbar navbar-dark bg-primary" style="background-color: #e3f2fd;">
+  <a class="navbar-brand" href="#"><h1>Colony W</h1></a>
+
+  <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    User Account
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <%= link_to "My Profile", { controller: "users" }, class: "dropdown-item" %>
+    <%= link_to "Map", { controller: "colonies" }, class: "dropdown-item" %>
+    <%= link_to "Settings", "#", class: "dropdown-item" %>
+    <%= link_to "Log out", "#", class: "dropdown-item" %>
+  </div>
+</div>
+</nav>
