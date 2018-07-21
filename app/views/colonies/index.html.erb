@@ -11,6 +11,7 @@
 
   <tbody>
     <% @colonies.each do |colony| %>
+    <h4><%= link_to colony.name, colony %></h4>
       <tr>
         <td><%= link_to 'Show', colony %></td>
         <td><%= link_to 'Edit', edit_colony_path(colony) %></td>
