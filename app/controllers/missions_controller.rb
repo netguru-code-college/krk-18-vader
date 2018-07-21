@@ -1,5 +1,6 @@
 class MissionsController < ApplicationController
   before_action :set_mission, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /missions
   # GET /missions.json
@@ -15,7 +16,6 @@ class MissionsController < ApplicationController
   # GET /missions/new
   def new
     @mission = current_user.build_mission
-
   end
 
   # GET /missions/1/edit
@@ -70,6 +70,6 @@ class MissionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def mission_params
-      params.require(:mission).permit(:name, :description, :aim, :user)
+      params.require(:mission).permit(:name, :description, :aim, :captain_id)
     end
 end

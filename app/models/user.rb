@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   belongs_to :colony, optional: true
   mount_uploader :picture, PictureUploader
-  has_one :mission
+  has_one :mission, foreign_key: :captain_id
   has_one :role
   has_one :job
 
