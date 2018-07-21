@@ -14,7 +14,8 @@ class MissionsController < ApplicationController
 
   # GET /missions/new
   def new
-    @mission = Mission.new
+    @mission = current_user.build_mission
+
   end
 
   # GET /missions/1/edit
@@ -69,6 +70,6 @@ class MissionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def mission_params
-      params.fetch(:mission, {})
+      params.require(:mission).permit(:name, :description, :aim, :user)
     end
 end

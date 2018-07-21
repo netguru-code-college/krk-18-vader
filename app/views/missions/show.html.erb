@@ -1,4 +1,29 @@
 <p id="notice"><%= notice %></p>
 
+<div>
+	<p>
+		<%= "Mission name: #{@mission.name}" %>
+	</p>
+</div>
+<br>
+<div>
+	<p>
+		<%= "Mission captain: #{@mission.captain}" %>
+	</p>
+</div>
+<br>
+<div>
+	<p>
+		<%= "Mission aim: #{@mission.aim}" %>
+	</p>
+</div><br>
+<div>
+	<p>
+		<%= "Mission name: #{@mission.name}" %>
+	</p>
+</div>
+
+
+
 <%= link_to 'Edit', edit_mission_path(@mission) %> |
 <%= link_to 'Back', missions_path %>

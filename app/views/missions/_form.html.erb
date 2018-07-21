@@ -12,6 +12,13 @@
   <% end %>
 
   <div class="actions">
+    <%= form_for @mission do |mission_form| %>
+      <%= mission_form.text_field :name, placeholder: "Name"%><br>
+      <%= mission_form.text_field :description, placeholder: "Description" %><br>
+      <%= mission_form.select :aim, Mission.aims.keys, {} %><br>
+
+    <% end %>
+
     <%= form.submit %>
   </div>
 <% end %>
