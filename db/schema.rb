@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_21_131233) do
+ActiveRecord::Schema.define(version: 2018_07_21_101151) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,12 +35,12 @@ ActiveRecord::Schema.define(version: 2018_07_21_131233) do
   end
 
   create_table "missions", force: :cascade do |t|
+    t.integer "captain_id"
+    t.string "name"
+    t.integer "aim"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "name"
-    t.text "description"
-    t.integer "aim"
-    t.integer "captain_id"
+    t.index ["captain_id"], name: "index_missions_on_captain_id"
   end
 
   create_table "roles", force: :cascade do |t|
