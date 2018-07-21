@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: krk-18-vader_production
-  username: krk-18-vader
+  database: d602i1sauckl6s
+  username: fewysceteckayt
   password: <%= ENV['KRK-18-VADER_DATABASE_PASSWORD'] %>
