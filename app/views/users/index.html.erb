@@ -5,6 +5,7 @@
 <table class="table">
   <thead>
     <tr>
+      <th>Pic</th>
       <th>Name</th>
       <th>Birthday</th>
       <th>Homeplanet</th>
@@ -15,6 +16,13 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
+        <% if !user.picture.blank? %>
+        <td>
+          <img style="width: 80px;" src="<%= user.picture %>" alt="user-picture" class="img-thumbnail">
+        </td>
+        <% else %>
+        <td>No picture</td>
+        <% end %>
         <td><%= user.name %></td>
         <td><%= user.birthday %></td>
         <td><%= user.homeplanet %></td>
