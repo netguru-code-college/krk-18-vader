@@ -10,6 +10,17 @@
       </ul>
     </div>
   <% end %>
+  <%= label :name, "Name: " %>
+  <%= form.text_field :name, placeholder: "Han Solo" %><br>
+  <%= label :email, "Email: " %>
+  <%= form.text_field :email, placeholder: "han@solo.com" %><br>
+  <%= label :Homeplanet, "Homeplanet: " %>
+  <%= form.text_field :homeplanet, placeholder: "Deathstar" %><br>
+  <%= label :birthday, "Birthday: " %>
+  <%= form.text_field :birthday, placeholder: "10.10.2000" %><br>
+  <%= label :picture, "Picture: " %>
+  <%= form.file_field :picture %>
+  
 
   <div class="actions">
     <%= form.submit %>
