@@ -1,2 +1,3 @@
 class Mission < ApplicationRecord
+	
 end
