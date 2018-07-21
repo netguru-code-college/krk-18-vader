@@ -7,11 +7,12 @@
     User Account
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="/users">My Profile</a>
-    <a class="dropdown-item" href="#">Map</a>
-    <a class="dropdown-item" href="#">Settings</a>
-    <a class="dropdown-item" href="#">Log out</a>
+    <%= link_to "My Profile", { controller: "users" }, class: "dropdown-item" %>
+    <%= link_to "Map", { controller: "colonies" }, class: "dropdown-item" %>
+    <%= link_to "Settings", "#", class: "dropdown-item" %>
+    <%= link_to "Log out", "#", class: "dropdown-item" %>
   </div>
 </div>
 </nav>
 
+Lorem ipsum
