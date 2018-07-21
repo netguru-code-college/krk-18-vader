@@ -12,9 +12,14 @@
 <p>
   Birthday: <%= @user.birthday %>
 </p>
+<% if !@user.picture.blank? %>
 <p>
-  Picture <%= @user.picture %>
+  Picture 
+    <img style="width: 300px;" class="img-thumbnail rounded" src="<%= @user.picture %>" alt="Users picture" />
 </p>
+<% else %>
+<p>User didn't provide picture :(</p>
+<% end %>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
