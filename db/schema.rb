@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_21_101151) do
+ActiveRecord::Schema.define(version: 2018_07_21_144630) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,12 +35,8 @@ ActiveRecord::Schema.define(version: 2018_07_21_101151) do
   end
 
   create_table "missions", force: :cascade do |t|
-    t.integer "captain_id"
-    t.string "name"
-    t.integer "aim"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["captain_id"], name: "index_missions_on_captain_id"
   end
 
   create_table "roles", force: :cascade do |t|
@@ -66,10 +62,10 @@ ActiveRecord::Schema.define(version: 2018_07_21_101151) do
     t.datetime "last_sign_in_at"
     t.inet "current_sign_in_ip"
     t.inet "last_sign_in_ip"
+    t.integer "job"
     t.index ["colonies_id"], name: "index_users_on_colonies_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "missions", "users", column: "captain_id"
 end

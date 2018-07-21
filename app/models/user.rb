@@ -7,6 +7,7 @@ class User < ApplicationRecord
   mount_uploader :picture, PictureUploader
   has_one :mission
   has_one :role
-  has_one :job
+
+  enum job: %i(captain soldier pilot medic cook)
 
 end
