@@ -12,6 +12,10 @@
   <tbody>
     <% @missions.each do |mission| %>
       <tr>
+        <td><%= mission.name %></td>
+        <td><%= mission.description %></td>
+        <td><%= mission&.captain %></td>
+        <td><%= mission.aim %></td>
         <td><%= link_to 'Show', mission %></td>
         <td><%= link_to 'Edit', edit_mission_path(mission) %></td>
         <td><%= link_to 'Destroy', mission, method: :delete, data: { confirm: 'Are you sure?' } %></td>
