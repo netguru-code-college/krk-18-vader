@@ -1,0 +1,17 @@
+<%= form_with(model: colony, local: true) do |form| %>
+  <% if colony.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(colony.errors.count, "error") %> prohibited this colony from being saved:</h2>
+
+      <ul>
+      <% colony.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
