@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_21_144630) do
+ActiveRecord::Schema.define(version: 2018_07_21_141810) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,8 @@ ActiveRecord::Schema.define(version: 2018_07_21_144630) do
   create_table "missions", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "description"
+    t.index ["captain_id"], name: "index_missions_on_captain_id"
   end
 
   create_table "roles", force: :cascade do |t|
