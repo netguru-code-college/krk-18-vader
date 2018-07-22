@@ -14,7 +14,7 @@
       <tr>
         <td><%= mission.name %></td>
         <td><%= mission.description %></td>
-        <td><%= mission&.captain %></td>
+        <td><%= mission&.captain.name %></td>
         <td><%= mission.aim %></td>
         <td><%= link_to 'Show', mission %></td>
         <td><%= link_to 'Edit', edit_mission_path(mission) %></td>
