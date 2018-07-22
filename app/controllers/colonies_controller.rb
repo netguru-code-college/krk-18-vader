@@ -55,5 +55,5 @@ class ColoniesController < ApplicationController
 
   def colony_params
     params.fetch(:colony, {})
-    end
+  end
 end
