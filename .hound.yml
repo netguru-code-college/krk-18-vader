@@ -1,4 +1,5 @@
 ruby:
   config_file: .rubocop.yml
 javascript:
-  config_file: .jshintrc
+  enabled: true
+  config_file: .javascript-style.json
