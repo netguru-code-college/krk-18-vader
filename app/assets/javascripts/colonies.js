@@ -312,10 +312,12 @@ initMap = async () => {
   });
   switch(currentPath) {
     case '/colonies':
+      console.log('index')
       await fetchMarkers()  
       createMarkers()
       break;
     case '/colonies/new':
+      console.log('new')
       map.addListener('click', function(e) {
         let chosenLat = e.latLng.lat()
         let chosenLng = e.latLng.lng()
@@ -329,7 +331,8 @@ initMap = async () => {
       });
       break;
 
-    case `${currentPath.match(/\/\d+$/)}/edit`:
+    case `/colonies${currentPath.match(/\/\d+/)[0]}/edit`:
+      console.log('editin')
       let currentLat = parseInt($('input[name="colony[lat]"]').val())
       let currentLng = parseInt($('input[name="colony[lng]"]').val())
       marker = new google.maps.Marker({
@@ -348,11 +351,12 @@ initMap = async () => {
         });
       });
       break;
-    case `/colonies${currentPath.match(/\/\d+/)}`:
+    case `/colonies${currentPath.match(/\/\d+$/)[0]}`:
       console.log('hello')
       await fetchColonyMarker()
       break;
     default:
+      console.log('default')
      break;
   }
 
