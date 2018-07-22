@@ -13,7 +13,7 @@
   <div class="container">
     <% @missions.each do |mission| %>
       <ul class="list-group">
-        <li class="list-group-item list-group-item-light"><%= link_to mission.name, mission %></li>
+        <li class="list-group-item list-group-item-light"><%= link_to mission.name, mission, class: "btn" %></li>
       </ul>
     <% end %>
 </div>
