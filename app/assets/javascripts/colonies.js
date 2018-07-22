@@ -1,7 +1,8 @@
-const baseView = {lat: 28.291565, lng: -15.5};
-let markers = []
+let baseView;
 let styledMapType;
 let map;
+let marker;
+let markers = []
 
 const styleMap = () => {
   styledMapType = new google.maps.StyledMapType(
@@ -253,18 +254,38 @@ const fetchMarkers = async () => {
     console.log(err)
   })
 }
-
+const fetchColonyMarker = async () => {
+  let path = window.location.pathname
+  let colonyId = path.substr(path.length - 1)
+  let colony
+  await $.get('/colonies/'+colonyId+".json")
+    .done(resp => {
+      console.log(resp)
+      let colonyLat = resp.lat
+      let colonyLng = resp.lng
+      baseView = {lat: colonyLat, lng: colonyLng}
+      marker = new google.maps.Marker({
+        position: baseView,
+        map: map
+      });
+      marker.addListener('click', function() {
+        infowindow.open(map, gMarker);
+      });
+    })
+    .fail(err => console.log(err))
+}
 const createMarkers = () => {
   markers.forEach(marker => {
     let markerName = marker.name
     let markerLat = marker.lat
     let markerLng = marker.lng
+    let markerId = marker.id
     let gMarker = new google.maps.Marker({
       position: {lat: markerLat, lng: markerLng},
       map: map
     });
    let infowindow = new google.maps.InfoWindow({
-      content: markerName
+      content: `<a href="/colonies/${markerId}">${markerName}</a>`
     });
     gMarker.addListener('click', function() {
       infowindow.open(map, gMarker);
@@ -273,7 +294,17 @@ const createMarkers = () => {
 }
 
 initMap = async () => {
-  await fetchMarkers()
+  const currentPath = window.location.pathname
+  if(currentPath === '/colonies'){ 
+    baseView = {
+      lat: 28.291565, lng: -15.5
+    }
+    console.log('fetching all markers')
+  } else {
+    await fetchColonyMarker()
+    console.log('fetching colony marker')
+  }
+
   map = new google.maps.Map(document.querySelector("#g-map-index"), {
     zoom: 3,
     center: baseView,
@@ -282,9 +313,21 @@ initMap = async () => {
               'styled_map']
     }
   });
+  if(currentPath === '/colonies'){ 
+    await fetchMarkers()  
+    createMarkers()
+  } else {
+    await fetchColonyMarker()
+  }
   styleMap()
+
+  map.addListener('click', function(e) {
+    let chosenLat = e.latLng.lat()
+    let chosenLng = e.latLng.lng()
+    console.log(chosenLng, chosenLat)
+  });
+
   map.mapTypes.set('styled_map', styledMapType);
   map.setMapTypeId('styled_map');
 
-  createMarkers()
 };
