@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ColoniesController < ApplicationController
   before_action :set_colony, only: %i[show edit update destroy]
 
@@ -48,6 +50,7 @@ class ColoniesController < ApplicationController
   end
 
   private
+
   # Never trust parameters from the scary internet, only allow the white list through.
   def colony_params
     params.require(:colony).permit(:name, :lat, :lng)

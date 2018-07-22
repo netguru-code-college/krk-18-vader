@@ -1,7 +1,14 @@
 @import "bootstrap";
 @import "colonies";
+
+$white-link: #ffffff;
+
+.nav-headline {
+  color: $white-link;
+}
+
 body { 
     // padding-top: 60px;
-    font-size: 18px;
-    font-family: 'sans-serif', 'Oxygen';
+  font-family: "Arial";
+  font-size: 18px;
 }
