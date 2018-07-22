@@ -1,1 +1,7 @@
-Lorem ipsum
+<h1>Missions listing</h1>
+
+<% @missions.each do |mission| %>
+  <ul><%= link_to mission.name, mission %></ul>
+<% end %>
+
+<%= link_to "Create mission", new_mission_path %>
