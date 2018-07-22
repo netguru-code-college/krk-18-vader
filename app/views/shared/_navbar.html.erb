@@ -1,5 +1,7 @@
-<nav class="navbar navbar-dark bg-primary" style="background-color: #e3f2fd;">
-  <h1><%= link_to "Colonizer", root_path, class: "nav-headline" %></h1>
+<nav class="navbar navbar-dark bg-secondary" style="background-color: #e3f2fd;">
+  <%= link_to root_path, class: "nav-headline" do %>
+    <h1><%= image_tag "favicon.png", size: "50x50" %> Colonizer</h1>
+  <% end %>
 
   <div class="dropdown">
     <% if user_signed_in? %>
