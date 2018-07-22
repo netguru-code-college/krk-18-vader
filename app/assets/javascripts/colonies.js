@@ -1,7 +1,7 @@
 const baseView = {lat: 28.291565, lng: -15.5};
 let markers = []
-let styledMapType
-let map
+let styledMapType;
+let map;
 
 const styleMap = () => {
   styledMapType = new google.maps.StyledMapType(
@@ -239,7 +239,7 @@ const styleMap = () => {
   }
   ],
   { name: 'Styled Map'});
-}
+};
 
 
 const fetchMarkers = async () => {
