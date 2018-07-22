@@ -2,17 +2,26 @@
 @import "colonies";
 @import "font-families";
 
+$background-color: #111;
 $white-link: #ffffff;
 
-.nav-headline {
-  color: $white-link;
-}
-
-h1, h2, h3 {
+h1 {
   font-family: 'Coda Caption', sans-serif;
 }
 
 body {
-  font-family: 'Roboto', sans-serif;;
+  background-color: $background-color;
+  font-family: 'Lato', sans-serif;
   font-size: 18px;
+}
+
+.navbar {
+  .nav-headline {
+    color: $white-link;
+
+    &:hover {
+      color: $white-link;
+      text-decoration: none;
+    }
+  }
 }
