@@ -1,4 +1,8 @@
 <%= form_with(model: colony, local: true) do |form| %>
+<div class="row d-flex justify-content-center">
+  
+<div class="col-6">
+  
   <% if colony.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(colony.errors.count, "error") %> prohibited this colony from being saved:</h2>
@@ -10,8 +14,21 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="actions">
-    <%= form.submit %>
+  <div class="form-control d-flex justify-content-center align-content-center flex-column">
+    <%= label :name, "Name: " %>
+    <%= form.text_field :name, placeholder: "Fuerteventura" %><br>
   </div>
+  <div class="form-control d-flex justify-content-center align-content-center flex-column">
+    <%= label :lat, "Latitude: " %>
+    <%= form.text_field :lat, placeholder: "XX.XXX" %><br>
+  </div>
+  <div class="form-control d-flex justify-content-center align-content-center flex-column">
+    <%= label :lng, "Longitude: " %>
+    <%= form.text_field :lng, placeholder: "XX.XXX" %><br>
+  </div>
+  <div class="actions">
+    <%= form.submit :class => "btn btn-info m-3" %>
+  </div>
+</div>
+</div>
 <% end %>
