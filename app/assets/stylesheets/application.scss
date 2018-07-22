@@ -2,7 +2,8 @@
 @import "colonies";
 @import "font-families";
 
-$background-color: #111;
+$background-color: #0e1626;
+$text-color: #bbb;
 $white-link: #ffffff;
 
 h1 {
@@ -11,6 +12,7 @@ h1 {
 
 body {
   background-color: $background-color;
+  color: $text-color;
   font-family: 'Lato', sans-serif;
   font-size: 18px;
 }
