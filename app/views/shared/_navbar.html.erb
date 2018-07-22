@@ -5,18 +5,16 @@
     <% if user_signed_in? %>
       <div>
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    User Account
+          <%= current_user.email %>
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <%= link_to "My Profile", user_path(current_user), class: "dropdown-item" %>
             <%= link_to "Map", colonies_path, class: "dropdown-item" %>
-            <%= link_to "Settings", "#", class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
         </div>
       </div>
     <% else %>
-      <button type="button" class="textbutton">Please log in to your account!</button>
+      <button type="button" class="btn btn-primary btn-lg" disabled>Please log in to your account!</button>
     <% end %>
   </div>
 </nav>
- 
