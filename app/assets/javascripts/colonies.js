@@ -260,7 +260,6 @@ const fetchColonyMarker = async () => {
   let colony
   await $.get('/colonies/'+colonyId+".json")
     .done(resp => {
-      console.log(resp)
       let colonyLat = resp.lat
       let colonyLng = resp.lng
       baseView = {lat: colonyLat, lng: colonyLng}
@@ -299,10 +298,8 @@ initMap = async () => {
     baseView = {
       lat: 28.291565, lng: -15.5
     }
-    console.log('fetching all markers')
   } else {
     await fetchColonyMarker()
-    console.log('fetching colony marker')
   }
 
   map = new google.maps.Map(document.querySelector("#g-map-index"), {
