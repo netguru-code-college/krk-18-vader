@@ -4,5 +4,5 @@ initMap = () => {
   const map = new google.maps.Map(document.querySelector("#g-map-index"), {
     zoom: 4,
     center: uluru
-  })
+  });
 };
