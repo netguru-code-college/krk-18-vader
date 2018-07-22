@@ -1,29 +1,18 @@
 class ColoniesController < ApplicationController
-  before_action :set_colony, only: [:show, :edit, :update, :destroy]
+  before_action :set_colony, only: %i[show edit update destroy]
 
-  # GET /colonies
-  # GET /colonies.json
   def index
     @colonies = Colony.all
   end
 
-  # GET /colonies/1
-  # GET /colonies/1.json
-  def show
-    
-  end
+  def show; end
 
-  # GET /colonies/new
   def new
     @colony = Colony.new
   end
 
-  # GET /colonies/1/edit
-  def edit
-  end
+  def edit; end
 
-  # POST /colonies
-  # POST /colonies.json
   def create
     @colony = Colony.new(colony_params)
 
@@ -38,8 +27,6 @@ class ColoniesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /colonies/1
-  # PATCH/PUT /colonies/1.json
   def update
     respond_to do |format|
       if @colony.update(colony_params)
@@ -52,8 +39,6 @@ class ColoniesController < ApplicationController
     end
   end
 
-  # DELETE /colonies/1
-  # DELETE /colonies/1.json
   def destroy
     @colony.destroy
     respond_to do |format|
@@ -63,14 +48,12 @@ class ColoniesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_colony
-      @colony = Colony.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def colony_params
-      params.fetch(:colony, {})
+  def set_colony
+    @colony = Colony.find(params[:id])
+  end
+
+  def colony_params
+    params.fetch(:colony, {})
     end
 end
-
