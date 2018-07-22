@@ -1,4 +1,11 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-6">
+    <p id="notice"><%= notice %></p>
+    <h2><%= @colony.name %></h2>    
+    <p>Latitude: <%= @colony.lat %></p>
+    <p>Longitude: <%= @colony.lng %></p>
+  </div>
+</div>
 
 <%= link_to 'Edit', edit_colony_path(@colony) %> |
 <%= link_to 'Back', colonies_path %>

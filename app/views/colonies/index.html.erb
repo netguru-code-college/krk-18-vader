@@ -1,26 +1,30 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-10 col-md-offset-2">
+    <p id="notice"><%= notice %></p>
+    <h1 class="display-3">Colonies</h1>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Colony</th>
+          <th colspan="2"></th>
+        </tr>
+      </thead>
 
-<h1>Colonies</h1>
+      <tbody>
+        <% @colonies.each do |colony| %>
+          <tr>
+            <td><%= link_to colony.name, colony %></td>
+            <td><%= link_to 'Edit', edit_colony_path(colony), :class => "btn btn-info" %></td>
+            <td><%= link_to 'Destroy', colony, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @colonies.each do |colony| %>
-    <h4><%= link_to colony.name, colony %></h4>
-      <tr>
-        <td><%= link_to 'Show', colony %></td>
-        <td><%= link_to 'Edit', edit_colony_path(colony) %></td>
-        <td><%= link_to 'Destroy', colony, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Colony', new_colony_path %>
+  </div>
+</div>
+<div class="row">
+  <div class="col-2">
+    <%= link_to 'New Colony', new_colony_path, :class => "btn btn-info" %>
+  </div>
+</div>

@@ -70,7 +70,7 @@ class ColoniesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def colony_params
-      params.fetch(:colony, {})
+      params.require(:colony).permit(:name, :lat, :lng)
     end
 end
 
