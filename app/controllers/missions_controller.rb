@@ -14,7 +14,7 @@ class MissionsController < ApplicationController
   def edit; end
 
   def create
-    @mission = Mission.new(mission_params)
+    @mission = current_user.build_mission(mission_params).decorate
 
     respond_to do |format|
       if @mission.save
@@ -54,6 +54,6 @@ class MissionsController < ApplicationController
   end
 
   def mission_params
-    params.require(:mission).permit(:name, :description, :aim, :captain_id)
+    params.require(:mission).permit(:name, :description, :aim, :captain_id, :status)
   end
 end
