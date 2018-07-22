@@ -20,7 +20,7 @@
 /yarn-error.log
 
 /public/assets
-/vendor
+/vendor/bundle
 .byebug_history
 
 # Ignore master key for decrypting credentials and more.
