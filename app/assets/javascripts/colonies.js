@@ -294,12 +294,12 @@ const createMarkers = () => {
 
 initMap = async () => {
   const currentPath = window.location.pathname
+  baseView = {
+    lat: 28.291565, lng: -15.5
+  }
   if(currentPath === '/colonies'){ 
-    baseView = {
-      lat: 28.291565, lng: -15.5
-    }
   } else {
-    await fetchColonyMarker()
+   // await fetchColonyMarker()
   }
 
   map = new google.maps.Map(document.querySelector("#g-map-index"), {
@@ -310,21 +310,31 @@ initMap = async () => {
               'styled_map']
     }
   });
-  if(currentPath === '/colonies'){ 
-    await fetchMarkers()  
-    createMarkers()
-  } else {
-    await fetchColonyMarker()
+  switch(currentPath) {
+    case '/colonies':
+      await fetchMarkers()  
+      createMarkers()
+      break;
+    case '/colonies/new':
+      map.addListener('click', function(e) {
+        let chosenLat = e.latLng.lat()
+        let chosenLng = e.latLng.lng()
+        $('input[name="colony[lat]"]').val(chosenLat)
+        $('input[name="colony[lng]"]').val(chosenLng)
+        if(marker){ marker.setMap(null) }
+        marker = new google.maps.Marker({
+          position: { lat: chosenLat, lng: chosenLng },
+          map: map
+        });
+
+      });
+      break;
+    default:
+      await fetchColonyMarker()
+      break;
   }
+
   styleMap()
-
-  map.addListener('click', function(e) {
-    let chosenLat = e.latLng.lat()
-    let chosenLng = e.latLng.lng()
-    console.log(chosenLng, chosenLat)
-  });
-
   map.mapTypes.set('styled_map', styledMapType);
   map.setMapTypeId('styled_map');
-
 };
