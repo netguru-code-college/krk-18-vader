@@ -2,7 +2,7 @@ let baseView;
 let styledMapType;
 let map;
 let marker;
-let markers = []
+let markers = [];
 
 const styleMap = () => {
   styledMapType = new google.maps.StyledMapType(
