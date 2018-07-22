@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RolesController < ApplicationController
   before_action :set_role, only: [:show, :edit, :update, :destroy]
 
@@ -48,7 +50,7 @@ class RolesController < ApplicationController
   end
 
   private
-  
+
   def set_role
     @role = Role.find(params[:id])
   end

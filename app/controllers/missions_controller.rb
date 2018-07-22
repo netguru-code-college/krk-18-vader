@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MissionsController < ApplicationController
   before_action :set_mission, only: [:show, :edit, :update, :destroy]
 
@@ -8,7 +10,7 @@ class MissionsController < ApplicationController
   def show; end
 
   def new
-    @mission = current_user.build_mission
+    @mission = current_user.build_mission.decorate
   end
 
   def edit; end
@@ -48,7 +50,7 @@ class MissionsController < ApplicationController
   end
 
   private
-  
+
   def set_mission
     @mission = Mission.find(params[:id])
   end
