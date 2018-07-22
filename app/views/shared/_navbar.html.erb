@@ -9,7 +9,7 @@
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <%= link_to "My Profile", user_path(current_user), class: "dropdown-item" %>
-            <%= link_to "Map", { controller: "colonies" }, class: "dropdown-item" %>
+            <%= link_to "Map", colonies_path, class: "dropdown-item" %>
             <%= link_to "Settings", "#", class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
         </div>
@@ -19,3 +19,4 @@
     <% end %>
   </div>
 </nav>
+ 
