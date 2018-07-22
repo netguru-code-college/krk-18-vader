@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/netguru-code-college/krk-18-solo.svg?branch=master)](https://travis-ci.org/netguru-code-college/krk-18-solo)
+[![Build Status](https://travis-ci.org/netguru-code-college/krk-18-vader.svg?branch=master)](https://travis-ci.org/netguru-code-college/krk-18-vader)
 
 # Colonize Like A Pro
 
