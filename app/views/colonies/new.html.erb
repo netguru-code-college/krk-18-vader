@@ -1,4 +1,12 @@
-<h1>New Colony</h1>
-
+<div class="row text-center">
+  <div class="col-12">
+    <h1>New Colony</h1>
+  </div>
+</div>
 <%= render 'form', colony: @colony %>
-<%= link_to 'Back', colonies_path %>
+
+<div class="row text-center">
+  <div class="col-12">
+    <%= link_to 'Back', colonies_path, :class => "btn btn-warning" %>
+  </div>
+</div>

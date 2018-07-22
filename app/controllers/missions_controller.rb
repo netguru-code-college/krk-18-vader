@@ -8,7 +8,7 @@ class MissionsController < ApplicationController
   def show; end
 
   def new
-    @mission = current_user.build_mission
+    @mission = current_user.build_mission.decorate
   end
 
   def edit; end
