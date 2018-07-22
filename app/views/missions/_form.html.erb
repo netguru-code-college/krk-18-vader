@@ -1,4 +1,4 @@
-<% if @mission.errors.any? %>
+<% if mission.errors.any? %>
   <div id="error_explanation">
     <h2><%= pluralize(mission.errors.count, "error") %> prohibited this mission from being saved:</h2>
     <ul><% mission.errors.full_messages.each do |message| %>
@@ -6,12 +6,14 @@
     <% end %></ul>
   </div>
 <% end %>
+
 <div class="actions">
-  <%= form_for @mission do |mission_form| %>
-    <%= mission_form.select :status, @mission.pretty_statuses %><br> 
-    <%= mission_form.text_field :name, placeholder: "Name"%><br>
-    <%= mission_form.text_field :description, placeholder: "Description" %><br>
-    <%= mission_form.select :aim, Mission.aims.keys, {} %><br>
-    <%= mission_form.submit %>
+  <%= form_for mission do |mission_form| %>
+    <%= mission_form.select :aim, Mission.aims.keys, {} %>
+    <%= mission_form.select :status, mission.pretty_statuses, class: "form-control" %><br><br>
+    <%= mission_form.text_field :name, placeholder: "Name" %><br><br>
+    <%= mission_form.text_field :description, placeholder: "Description" %><br><br>
+
+    <%= mission_form.submit "Submit", class: "btn btn-outline-success" %>
   <% end %>
 </div>
