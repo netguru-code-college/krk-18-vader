@@ -1,6 +1,7 @@
-<h1>Editing Mission</h1>
-
-<%= render 'form', mission: @mission %>
-
-<%= link_to 'Show', @mission %> |
-<%= link_to 'Back', missions_path %>
+<div class="jumbotron jumbotron-fluid">
+  <%= link_to 'Cancel', missions_path, class: "btn btn-outline-danger float-right" %>
+  <div class="container">
+    <h1 class="display-4">Editing Mission</h1>
+    <p class="lead"><%= render 'form', mission: @mission %> </p>  
+  </div>
+</div>

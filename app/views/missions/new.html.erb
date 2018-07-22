@@ -1,5 +1,7 @@
-<h1>New Mission</h1>
-
-<%= render 'form', mission: @mission %>
-
-<%= link_to 'Back', missions_path %>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">New Mission</h1>
+    <p class="lead"><%= render 'form', mission: @mission %> </p>    
+  </div>
+</div>
+<%= link_to 'Back', missions_path, class: "btn btn-outline-secondary" %>

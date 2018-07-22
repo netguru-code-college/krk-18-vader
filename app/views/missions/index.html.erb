@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
+<%= link_to "New Mission", new_mission_path, class: "btn btn-outline-secondary float-right" %><br>
 
-<h1>Missions</h1>
+<h1 class="badge badge-secondary">Missions</h1><br>
 
 <table>
   <thead>
@@ -9,21 +10,13 @@
     </tr>
   </thead>
 
-  <tbody>
+  <div class="container">
     <% @missions.each do |mission| %>
-      <tr>
-        <td><%= mission.name %></td>
-        <td><%= mission.description %></td>
-        <td><%= mission&.captain.name %></td>
-        <td><%= mission.aim %></td>
-        <td><%= link_to 'Show', mission %></td>
-        <td><%= link_to 'Edit', edit_mission_path(mission) %></td>
-        <td><%= link_to 'Destroy', mission, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <ul class="list-group">
+        <li class="list-group-item list-group-item-light"><%= link_to mission.name, mission, class: "btn" %></li>
+      </ul>
     <% end %>
-  </tbody>
-</table>
+</div>
 
 <br>
 
-<%= link_to 'New Mission', new_mission_path %>
