@@ -1,4 +1,3 @@
-
 const uluru = {lat: -25.344, lng: 131.036};
 
 initMap = () => {
@@ -6,4 +5,4 @@ initMap = () => {
     zoom: 4,
     center: uluru
   })
-}
+};

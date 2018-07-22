@@ -1,4 +1,3 @@
 ruby:
   config_file: .rubocop.yml
-js:
   esversion: 6
