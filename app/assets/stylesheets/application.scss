@@ -4,10 +4,6 @@
 
 $white-link: #ffffff;
 
-.nav-headline {
-  color: $white-link;
-}
-
 h1 {
   font-family: 'Coda Caption', sans-serif;
 }
@@ -15,4 +11,15 @@ h1 {
 body {
   font-family: 'Lato', sans-serif;
   font-size: 18px;
+}
+
+.navbar {
+  .nav-headline {
+    color: $white-link;
+
+    &:hover {
+      color: $white-link;
+      text-decoration: none;
+    }
+  }
 }
