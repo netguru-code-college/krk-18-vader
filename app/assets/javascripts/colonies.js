@@ -256,7 +256,7 @@ const fetchMarkers = async () => {
 }
 const fetchColonyMarker = async () => {
   let path = window.location.pathname
-  let colonyId = path.substr(path.length - 1)
+  let colonyId = path.match(/\/\d+/)
   let colony
   await $.get('/colonies/'+colonyId+".json")
     .done(resp => {
@@ -326,12 +326,34 @@ initMap = async () => {
           position: { lat: chosenLat, lng: chosenLng },
           map: map
         });
-
       });
       break;
-    default:
+
+    case `${currentPath.match(/\/\d+$/)}/edit`:
+      let currentLat = parseInt($('input[name="colony[lat]"]').val())
+      let currentLng = parseInt($('input[name="colony[lng]"]').val())
+      marker = new google.maps.Marker({
+          position: { lat: currentLat, lng: currentLng },
+          map: map
+        });
+      map.addListener('click', function(e) {
+        let chosenLat = e.latLng.lat()
+        let chosenLng = e.latLng.lng()
+        $('input[name="colony[lat]"]').val(chosenLat)
+        $('input[name="colony[lng]"]').val(chosenLng)
+        if(marker){ marker.setMap(null) }
+        marker = new google.maps.Marker({
+          position: { lat: chosenLat, lng: chosenLng },
+          map: map
+        });
+      });
+      break;
+    case `/colonies${currentPath.match(/\/\d+/)}`:
+      console.log('hello')
       await fetchColonyMarker()
       break;
+    default:
+     break;
   }
 
   styleMap()

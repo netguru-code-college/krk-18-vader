@@ -1,14 +1,16 @@
 <div class="row text-center">
-  <div class="col-12">
+  <div class="col-6">
     <h1>Editing Colony</h1>
+    <%= render 'form', colony: @colony %>
+    <div class="col-12">
+      <%= link_to 'Show', @colony, :class => "btn btn-info" %>
+      <%= link_to 'Back', colonies_path, :class => "btn btn-warning" %>
+    </div>
+  </div>
+  <div class="col-6">
+    <div id="g-map-index" class="g-map-show-colony"></div>
   </div>
 </div>
 
-<%= render 'form', colony: @colony %>
 
-<div class="row text-center">
-  <div class="col-12">
-    <%= link_to 'Show', @colony, :class => "btn btn-info" %>
-    <%= link_to 'Back', colonies_path, :class => "btn btn-warning" %>
-  </div>
-</div>
+  
