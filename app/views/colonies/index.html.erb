@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-10 col-md-offset-2">
+  <div class="col-6 colonies-col">
     <p id="notice"><%= notice %></p>
     <h1 class="display-3">Colonies</h1>
     <table class="table table-hover">
@@ -20,13 +20,11 @@
         <% end %>
       </tbody>
     </table>
-
+    <div class="col-12 d-flex justify-content-end">
+      <%= link_to 'New Colony', new_colony_path, :class => "btn btn-primary" %>
+    </div>
   </div>
-</div>
-<div class="row">
-  <div class="col-2">
-    <%= link_to 'New Colony', new_colony_path, :class => "btn btn-info" %>
+  <div class="col-6 colonies-col">
+    <div id="g-map-index" class="g-map-show-colony"></div>
   </div>
-</div>
-<div id="g-map-index" class="g-map-show-colony"></div>
 </div>

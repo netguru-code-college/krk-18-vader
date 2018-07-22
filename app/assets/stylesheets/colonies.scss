@@ -2,8 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .g-map-show-colony {
-  bottom: 0;
+  height: 100vh;
+  width: 50vw;
+}
+
+.g-map-show {
   height: 60vh;
-  position: absolute;
   width: 100vw;
+}
+
+.colonies-col {
+  height: 100vh;
 }

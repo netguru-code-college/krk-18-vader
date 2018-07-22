@@ -1,5 +1,6 @@
 @import "bootstrap";
 @import "colonies";
+@import "font-families";
 
 $white-link: #ffffff;
 
@@ -7,8 +8,11 @@ $white-link: #ffffff;
   color: $white-link;
 }
 
-body { 
-    // padding-top: 60px;
-  font-family: "Arial";
+h1, h2, h3 {
+  font-family: 'Coda Caption', sans-serif;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;;
   font-size: 18px;
 }

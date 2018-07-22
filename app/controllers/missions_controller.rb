@@ -10,13 +10,15 @@ class MissionsController < ApplicationController
   def show; end
 
   def new
-    @mission = current_user.build_mission.decorate
+    @mission = current_user.missions.build.decorate
   end
 
-  def edit; end
+  def edit
+    @mission = current_user.missions.find(params[:id]).decorate
+  end
 
   def create
-    @mission = current_user.build_mission(mission_params).decorate
+    @mission = current_user.missions.build(mission_params).decorate
 
     respond_to do |format|
       if @mission.save

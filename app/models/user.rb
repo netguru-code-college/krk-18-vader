@@ -7,7 +7,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   belongs_to :colony, optional: true
   mount_uploader :picture, PictureUploader
-  has_one :mission, foreign_key: :captain_id
+  has_many :missions, dependent: :nullify, foreign_key: :captain_id
   has_one :role
 
   enum job: %i(captain soldier cook pilot medic)
