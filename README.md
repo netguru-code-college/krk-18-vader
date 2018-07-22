@@ -1,4 +1,4 @@
-# Colonize Like A Pro
+# KRK 18 Vader - Colonize Like A Pro
 
 [![Build Status](https://travis-ci.org/netguru-code-college/krk-18-vader.svg?branch=master)](https://travis-ci.org/netguru-code-college/krk-18-vader)
 
@@ -17,7 +17,10 @@ If Darth Vader was alive he would use it.
 
 ## Pro Team
 
-* Sileo1024
-* robson3999
-* thulethi
-* kjuri
+Team Vader:
+* @Sileo1024
+* @robson3999
+* @thulethi
+* @kjuri
+
+### This app was created during the Netguru Code College Weekend Edition Kraków
