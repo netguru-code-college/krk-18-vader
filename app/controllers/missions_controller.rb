@@ -1,29 +1,18 @@
 class MissionsController < ApplicationController
   before_action :set_mission, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
 
-  # GET /missions
-  # GET /missions.json
   def index
     @missions = Mission.all
   end
 
-  # GET /missions/1
-  # GET /missions/1.json
-  def show
-  end
+  def show; end
 
-  # GET /missions/new
   def new
     @mission = current_user.build_mission.decorate
   end
 
-  # GET /missions/1/edit
-  def edit
-  end
+  def edit; end
 
-  # POST /missions
-  # POST /missions.json
   def create
     @mission = Mission.new(mission_params)
 
@@ -38,8 +27,6 @@ class MissionsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /missions/1
-  # PATCH/PUT /missions/1.json
   def update
     respond_to do |format|
       if @mission.update(mission_params)
@@ -52,8 +39,6 @@ class MissionsController < ApplicationController
     end
   end
 
-  # DELETE /missions/1
-  # DELETE /missions/1.json
   def destroy
     @mission.destroy
     respond_to do |format|
@@ -63,13 +48,12 @@ class MissionsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_mission
-      @mission = Mission.find(params[:id])
-    end
+  
+  def set_mission
+    @mission = Mission.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def mission_params
-      params.require(:mission).permit(:name, :description, :aim, :captain_id)
-    end
+  def mission_params
+    params.require(:mission).permit(:name, :description, :aim, :captain_id)
+  end
 end

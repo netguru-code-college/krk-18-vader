@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(version: 2018_07_22_071718) do
     t.datetime "last_sign_in_at"
     t.inet "current_sign_in_ip"
     t.inet "last_sign_in_ip"
+    t.integer "job"
     t.index ["colonies_id"], name: "index_users_on_colonies_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
