@@ -48,14 +48,13 @@ class ColoniesController < ApplicationController
   end
 
   private
-
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def colony_params
-      params.require(:colony).permit(:name, :lat, :lng)
-    end
+ 
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def colony_params
+    params.require(:colony).permit(:name, :lat, :lng)
+  end
 
   def set_colony
     @colony = Colony.find(params[:id])
-  end
-
+    end
 end
