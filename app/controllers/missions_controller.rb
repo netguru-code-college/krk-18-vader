@@ -15,7 +15,7 @@ class MissionsController < ApplicationController
 
   # GET /missions/new
   def new
-    @mission = current_user.build_mission
+    @mission = current_user.build_mission.decorate
   end
 
   # GET /missions/1/edit

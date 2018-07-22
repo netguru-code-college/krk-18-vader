@@ -3,4 +3,6 @@ class Mission < ApplicationRecord
 	has_many :items
 
 	enum aim: %i(colonize maintain utilize other)
+
+	enum status: %i(assigned in_progress completed)
 end
