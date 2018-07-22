@@ -1,4 +1,4 @@
-const uluru = {lat: 28.291565, lng: -15.5};
+const baseView = {lat: 28.291565, lng: -15.5};
 let markers = []
 let map
 const fetchMarkers = async () => {
@@ -35,7 +35,7 @@ initMap = async () => {
   await fetchMarkers()
   map = new google.maps.Map(document.querySelector("#g-map-index"), {
     zoom: 3,
-    center: uluru
+    center: baseView
   });
   createMarkers()
 };
